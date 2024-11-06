@@ -1,20 +1,21 @@
 body {
+  font-family: Helvetica, Arial, sans-serif;
   background-color: Canvas;
   color: CanvasText;
   color-scheme: light dark;
 }
 
 button {
-  background: CanvasText;
-  color: Canvas;
-  border: 1px solid Canvas;
+  background: Canvas;
+  color: CanvasText;
+  border: 1px solid CanvasText;
   border-radius: 4px;
   padding: 0.5rem;
 
   &:hover:not(:disabled) {
-    color: CanvasText;
-    background: Canvas;
-    border-color: CanvasText;
+    color: Canvas;
+    background: CanvasText;
+    border-color: Canvas;
   }
 
   &:disabled {
@@ -22,7 +23,6 @@ button {
   }
 
   &.selected {
-    outline: 4px solid red;
-    border-color: CanvasText;
+    text-decoration: underline;
   }
 }

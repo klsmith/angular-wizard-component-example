@@ -11,9 +11,11 @@
   </span>
   </div>
 
-  <ng-container
-    *ngTemplateOutlet="selectedStep?.template ?? wizardError"
-  ></ng-container>
+  <div class="wizard-template-output-container">
+    <ng-container
+      *ngTemplateOutlet="selectedStep?.template ?? wizardError"
+    ></ng-container>
+  </div>
 
   <div class="wizard-footer">
     <button [disabled]="!hasPrevious()"
@@ -28,5 +30,7 @@
 </div>
 
 <ng-template #wizardError>
-  ERROR! Invalid Step Selected!
+  <div class="wizard-error">
+    ERROR! Invalid Step Selected!
+  </div>
 </ng-template>
