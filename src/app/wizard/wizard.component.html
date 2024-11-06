@@ -1,0 +1,32 @@
+<div class="wizard-container">
+  <div>
+  <span *ngFor="let step of steps; index as i; last as isLast">
+    <button (click)="onStepButtonClick(i)"
+            [class.selected]="i === _stepIndex">
+      {{ step.title }}
+    </button>
+    <ng-container *ngIf="!isLast">
+      &nbsp;&gt;&nbsp;
+    </ng-container>
+  </span>
+  </div>
+
+  <ng-container
+    *ngTemplateOutlet="selectedStep?.template ?? wizardError"
+  ></ng-container>
+
+  <div class="wizard-footer">
+    <button [disabled]="!hasPrevious()"
+            (click)="previous()">
+      &lt;&nbsp;Previous
+    </button>
+    <button [disabled]="!hasNext()"
+            (click)="next()">
+      Next&nbsp;&gt;
+    </button>
+  </div>
+</div>
+
+<ng-template #wizardError>
+  ERROR! Invalid Step Selected!
+</ng-template>

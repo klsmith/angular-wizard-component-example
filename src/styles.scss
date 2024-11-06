@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: Canvas;
+  color: CanvasText;
+  color-scheme: light dark;
+}
+
+button {
+  background: CanvasText;
+  color: Canvas;
+  border: 1px solid Canvas;
+  border-radius: 4px;
+  padding: 0.5rem;
+
+  &:hover:not(:disabled) {
+    color: CanvasText;
+    background: Canvas;
+    border-color: CanvasText;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &.selected {
+    outline: 4px solid red;
+    border-color: CanvasText;
+  }
+}
